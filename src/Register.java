@@ -57,12 +57,17 @@ public class Register {
 		do{
 			System.out.println("Enter your password: ");
 			password = input.nextLine();
-			if(password.length()>8)
-				nonalphanumeric = checkAlphaNumeric(password, "^[a-zA-Z0-9]+$");
-			else{
+			nonalphanumeric = true;
+			if(password.length()>=8){
+				if(password.matches(".*\\d.*")){
+					if(password.matches(".*[A-Z]"))
+						nonalphanumeric = false;
+					else
+						System.out.println("The password should have at least 1 capital letter.");
+				}else
+					System.out.println("The password should have at least 1 number.");
+			}else
 				System.out.println("The password is too short. Try again!");
-				nonalphanumeric = true;
-			}
 		}while(nonalphanumeric);
 		
 		//read the email from the user
@@ -82,7 +87,7 @@ public class Register {
 		if(correctInput == true){
 			//create the user and save that to the list
 			saveUser.list.add(createUser(tempName, tempAddress, username, password, email));
-			
+			System.out.println("The user is saved to the virtual database.");
 		}
 	}
 
@@ -93,7 +98,7 @@ public class Register {
 		if(m.find())
 			return false;
 		else{
-			System.out.println("The entered input is not alphanumeric. Try again!");
+			System.out.println("The entered input is not correct. Try again!");
 			return true;
 		}
 	}
@@ -113,7 +118,7 @@ public class Register {
 		String zipCode = temp[3];
 		
 		User newUser = new User(first, last, middle, email, address, city, state, zipCode, username, password);
-		System.out.println(newUser.toString());//see the details of user
+		System.out.println("The user is created.");
 		
 		return newUser;
 	}
