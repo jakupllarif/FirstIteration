@@ -1,5 +1,6 @@
 
 public class User {
+	
 	String firstName;
 	String lastName;
 	String middleName;
@@ -27,6 +28,15 @@ public class User {
 		this.zipCode = zipCode;
 		this.username = username;
 		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [firstName=" + firstName + ", lastName=" + lastName
+				+ ", middleName=" + middleName + ", email=" + email
+				+ ", address=" + address + ", city=" + city + ", state="
+				+ state + ", zipCode=" + zipCode + ", username=" + username
+				+ ", password=" + password + "]";
 	}
 	
 	
