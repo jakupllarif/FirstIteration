@@ -17,12 +17,13 @@ public class Controller {
 			String choice = input.next();
 			
 			switch (choice){
-				case "L":
+				case "L": case "l":
+					System.out.println("The list number is: " + saveUser.count() +"  "+ saveUser.list.get(1).getFirstName());
 					break;
-				case "R":
+				case "R": case "r":
 					new Register(saveUser);
 					break;
-				case "C":
+				case "C": case "c":
 					break;
 				default:
 					System.out.println("Wrong choice! Try again!");
@@ -31,7 +32,7 @@ public class Controller {
 			System.out.println("To continue press Y , to exit pres any key: ");
 			repeat = input.next();
 			
-		}while (repeat.equals("Y"));
+		}while (repeat.equals("Y") || repeat.equals("y"));
 	}
 		
 }
