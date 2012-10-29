@@ -21,7 +21,8 @@ public class Controller {
 					System.out.println("The list number is: " + saveUser.count() +"  "+ saveUser.list.get(1).getFirstName());
 					break;
 				case "R": case "r":
-					new Register(saveUser);
+					Register register = new Register(); //used to register the user
+					register.registerUser(saveUser);
 					break;
 				case "C": case "c":
 					break;
