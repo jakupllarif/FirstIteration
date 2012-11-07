@@ -1,15 +1,25 @@
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class ReadInput {
 
-	public void readUserInfo(String firstName, String middleName, String lastName, String address, String city, String state, String zipcode, String username, String password, String email) {
+	public void readUserInfo(AtomicReferenceArray<String> userInfo) {
 		
 		Scanner input = new Scanner(System.in);
-		
 		boolean nonalphanumeric;
+		String firstName; 
+		String middleName; 
+		String lastName; 
+		String address; 
+		String city; 
+		String state; 
+		String zipcode; 
+		String username; 
+		String password; 
+		String email;
 		
 		//read the first name of the user
 		do{
@@ -86,6 +96,17 @@ public class ReadInput {
 			nonalphanumeric = checkEmail(email);
 		}while(nonalphanumeric);
 		
+		//update the array userInfo which contains created user's information
+		userInfo.set(0, firstName);
+		userInfo.set(1, middleName);
+		userInfo.set(2, lastName);
+		userInfo.set(3, address);
+		userInfo.set(4, city);
+		userInfo.set(5, state);
+		userInfo.set(6, zipcode);
+		userInfo.set(7, username);
+		userInfo.set(8, password);
+		userInfo.set(9, email);
 	}
 	
 	

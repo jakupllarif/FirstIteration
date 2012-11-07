@@ -14,9 +14,9 @@ public class User {
 	
 	
 	
-	public User(String firstName, String lastName, String middleName,
-			String email, String address, String city, String state,
-			String zipCode, String username, String password) {
+	public User(String firstName, String middleName, String lastName,
+			String address, String city, String state, String zipCode,
+			String username, String password, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -30,6 +30,8 @@ public class User {
 		this.password = password;
 	}
 	
+
+	
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName
@@ -38,8 +40,9 @@ public class User {
 				+ state + ", zipCode=" + zipCode + ", username=" + username
 				+ ", password=" + password + "]";
 	}
-	
-	
+
+
+
 	//getters and setters
 	public String getFirstName() {
 		return firstName;

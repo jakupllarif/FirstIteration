@@ -10,4 +10,5 @@ public class DataAccess extends ArrayList<User> {
 		return list.size();
 	}
 	
+	
 }
