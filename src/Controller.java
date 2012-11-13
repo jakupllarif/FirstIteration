@@ -25,6 +25,8 @@ public class Controller {
 					register.registerUser(saveUser);
 					break;
 				case "C": case "c":
+					PasswordRecovery recover = new PasswordRecovery();
+					recover.Recov(saveUser);
 					break;
 				default:
 					System.out.println("Wrong choice! Try again!");

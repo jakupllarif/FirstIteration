@@ -24,6 +24,7 @@ public class ReadInput {
 		String secretAnswer2; 
 		String secretAnswer3;
 		
+		System.out.println("****************This is the Registration Part****************");
 		//read the first name of the user
 		do{
 			System.out.println("Enter your First name: ");
@@ -161,7 +162,7 @@ public class ReadInput {
 	}
 	
 	//check if password is correct
-	private boolean checkPassword(String password){
+	public boolean checkPassword(String password){
 		boolean hasDigit = false;
 		boolean hasUpperCase = false;
 		
