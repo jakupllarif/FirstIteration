@@ -20,6 +20,9 @@ public class ReadInput {
 		String username; 
 		String password; 
 		String email;
+		String secretAnswer1; 
+		String secretAnswer2; 
+		String secretAnswer3;
 		
 		//read the first name of the user
 		do{
@@ -95,6 +98,12 @@ public class ReadInput {
 			email = input.nextLine();
 			nonalphanumeric = checkEmail(email);
 		}while(nonalphanumeric);
+		 System.out.println("Secret Answer1: Enter your mother's birth city:");
+		 secretAnswer1 = input.nextLine();
+		 System.out.println("Secret Answer2: Enter your father's birth city:");
+		 secretAnswer2 = input.nextLine();
+		 System.out.println("Secret Answer3: Enter your mother's maiden name:");
+		 secretAnswer3 = input.nextLine();
 		
 		//update the array userInfo which contains created user's information
 		userInfo.set(0, firstName);
@@ -107,6 +116,10 @@ public class ReadInput {
 		userInfo.set(7, username);
 		userInfo.set(8, password);
 		userInfo.set(9, email);
+		userInfo.set(10, secretAnswer1);
+		userInfo.set(11, secretAnswer2);
+		userInfo.set(12, secretAnswer3);
+		
 	}
 	
 	

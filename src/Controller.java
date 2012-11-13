@@ -18,7 +18,7 @@ public class Controller {
 			
 			switch (choice){
 				case "L": case "l":
-					System.out.println("The list number is: " + saveUser.count() +"  "+ saveUser.list.get(1).getFirstName());
+					System.out.println("The list number is: " + saveUser.count() +"  "+ saveUser.userDatabase.get(1).getFirstName());
 					break;
 				case "R": case "r":
 					Register register = new Register(); //used to register the user

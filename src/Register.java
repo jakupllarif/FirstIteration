@@ -15,7 +15,11 @@ public class Register {
 		String zipcode = null;
 		String lastName = null;
 		String middleName = null;
-		String [] array = {firstName, middleName, lastName, address, city, state, zipcode, username, password, email};
+		String secretAns1 = null;
+		String secretAns2 = null;
+		String secretAns3 = null;
+		
+		String [] array = {firstName, middleName, lastName, address, city, state, zipcode, username, password, email, secretAns1, secretAns2, secretAns3};
 		
 		AtomicReferenceArray<String> userInfo = new AtomicReferenceArray<>(array);
 		
@@ -24,12 +28,12 @@ public class Register {
 		readUserData.readUserInfo(userInfo);
 		
 		//create the user and save that to the list
-		User newUser = new User(userInfo.get(0), userInfo.get(1), userInfo.get(2), userInfo.get(3), userInfo.get(4), userInfo.get(5), userInfo.get(6), userInfo.get(7), userInfo.get(8),userInfo.get(9));
+		User newUser = new User(userInfo.get(0), userInfo.get(1), userInfo.get(2), userInfo.get(3), userInfo.get(4), userInfo.get(5), userInfo.get(6), userInfo.get(7), userInfo.get(8),userInfo.get(9), userInfo.get(10), userInfo.get(11), userInfo.get(12));
 		System.out.println("The user is created.");
 		
 		System.out.println(newUser.toString());
 		
-		saveUser.list.add(newUser);
+		saveUser.userDatabase.add(newUser);
 		System.out.println("The number of users: " + saveUser.count());
 		
 		System.out.println("The user is saved to the virtual database.");

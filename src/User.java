@@ -11,12 +11,14 @@ public class User {
 	String zipCode;
 	String username;
 	String password;
-	
+	String secretAnswer1;
+	String secretAnswer2;
+	String secretAnswer3;
 	
 	
 	public User(String firstName, String middleName, String lastName,
 			String address, String city, String state, String zipCode,
-			String username, String password, String email) {
+			String username, String password, String email, String secretAnswer1, String secretAnswer2, String secretAnswer3) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -28,18 +30,25 @@ public class User {
 		this.zipCode = zipCode;
 		this.username = username;
 		this.password = password;
+		this.secretAnswer1 = secretAnswer1;
+		this.secretAnswer2 = secretAnswer2;
+		this.secretAnswer3 = secretAnswer3;
 	}
 	
 
-	
+
+
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName
 				+ ", middleName=" + middleName + ", email=" + email
 				+ ", address=" + address + ", city=" + city + ", state="
 				+ state + ", zipCode=" + zipCode + ", username=" + username
-				+ ", password=" + password + "]";
+				+ ", password=" + password + ", secretAnswer1=" + secretAnswer1
+				+ ", secretAnswer2=" + secretAnswer2 + ", secretAnswer3="
+				+ secretAnswer3 + "]";
 	}
+
 
 
 
@@ -104,6 +113,23 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public String getSecretAnswer1() {
+		return secretAnswer1;
+	}
+	public void setSecretAnswer1(String secretAnswer1) {
+		this.secretAnswer1 = secretAnswer1;
+	}
+	public String getSecretAnswer2() {
+		return secretAnswer2;
+	}
+	public void setSecretAnswer2(String secretAnswer2) {
+		this.secretAnswer2 = secretAnswer2;
+	}
+	public String getSecretAnswer3() {
+		return secretAnswer3;
+	}
+	public void setSecretAnswer3(String secretAnswer3) {
+		this.secretAnswer3 = secretAnswer3;
+	}
 	
 }
