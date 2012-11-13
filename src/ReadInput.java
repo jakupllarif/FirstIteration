@@ -76,7 +76,12 @@ public class ReadInput {
 		do{
 			System.out.println("Enter your ZipCode: ");
 			zipcode = input.nextLine();
-			nonalphanumeric = checkAlphaNumeric(zipcode, "^[0-9 ]+$");
+			if(zipcode.length()==5)
+				nonalphanumeric = checkAlphaNumeric(zipcode, "^[0-9 ]+$");
+			else{
+				System.out.println("The zipcode is not in the correct format! Try again!");
+				nonalphanumeric = true;
+			}
 		}while(nonalphanumeric);
 		
 		//read the username of the user
