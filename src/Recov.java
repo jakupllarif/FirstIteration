@@ -4,7 +4,7 @@ import java.*;
 
 public class Recov {
 
-                  
+                //''  
                 String rec1 = null;
                 String rec2 = null;
                 String newPass = null;
