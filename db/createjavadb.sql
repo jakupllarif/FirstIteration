@@ -19,6 +19,6 @@ firstName varchar(20),
  lastName varchar(20),
  middleName varchar(20),
 datetimelastlogin timestamp,  
- wrongtries int(5) default 0,
- lockedout tinyint default 0
-)
+ wrongtries int(5) default '0',
+ lockedout tinyint default '0'
+);
