@@ -26,13 +26,14 @@ Language- MYSQL
 	  
 
 
+         
+2.  - Set up MySQL GUI client/db management tool- (this step isn't necessary if you want to run the create db script from the 
+                                                command since)
 
-
-
-
-
-
-
+3.   -Create Database-  
+                     The first time you do this you want to use the createjavadb script in our project folder.
+                     You can either run this through the command MySQL command line that was installed with MySQL database server,
+                     or use a UI client to import it.
 
 
 
