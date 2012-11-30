@@ -13,7 +13,7 @@ public class TestLoginUtest
   Login sut = new Login();
  
   @Test
-  public void testValidUsernameAndPasswordCombination()
+  public void testValidUsernameAndPasswordCombination ()
   {
     boolean result = sut.isValidUsernameAndPassword("user3", "howtoprogramwithjava");
     assertTrue(result);
@@ -21,7 +21,7 @@ public class TestLoginUtest
   
   
 @Test
-public void testValidUsername()
+public void testValidUsername ()
 {
   boolean result = sut.isValidUsername("user231");
   assertFalse(result);
