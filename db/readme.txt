@@ -1,8 +1,16 @@
 Adding Sql/db files in this directory.
 
 This document should contain instructions on setting up jdbc connection for the team
------------------------------------------------------------------------------------------------------------
 
+DATABASE NAME = javadb
+USER =root (if we have time we should make other user for webapp access)
+PW= toor
+
+PORT=3306
+-----------------------------------------------------------------------------------------------------------
+http://www.tutorialspoint.com/jdbc/jdbc_tutorial.pdf
+http://www.tutorialspoint.com/jdbc/jdbc-quick-guide.htm
+http://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
 Steps should be followed in order for it to work
 
 Language- MYSQL
@@ -29,6 +37,7 @@ Language- MYSQL
          
 2.  - Set up MySQL GUI client/db management tool- (this step isn't necessary if you want to run the create db script from the 
                                                 command since)
+	MySQL workbench? http://dev.mysql.com/downloads/workbench/5.2.html
 
 3.   -Create Database-  
                      The first time you do this you want to use the createjavadb script in our project folder.
