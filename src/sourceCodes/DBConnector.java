@@ -1,4 +1,4 @@
-package team2project.sourceCodes;
+package sourceCodes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

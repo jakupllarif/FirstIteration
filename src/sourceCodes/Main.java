@@ -1,4 +1,5 @@
-package team2project.sourceCodes;
+package sourceCodes;
+
 
 
 public class Main {

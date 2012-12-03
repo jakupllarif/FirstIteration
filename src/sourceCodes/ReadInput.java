@@ -1,4 +1,4 @@
-package team2project.sourceCodes;
+package sourceCodes;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.regex.Matcher;

@@ -1,9 +1,10 @@
-package team2project.sourceCodes;
+package sourceCodes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 
 
 public class DataAccess extends ArrayList<User> {
