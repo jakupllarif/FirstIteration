@@ -1,5 +1,0 @@
-.classpath
-.project
-org.eclips*
-bin
-*.csv
