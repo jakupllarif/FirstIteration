@@ -1,4 +1,6 @@
+package team2project.sourceCodes;
 import java.util.Scanner;
+
 
 
 public class Controller {
@@ -18,15 +20,14 @@ public class Controller {
 			
 			switch (choice){
 				case "L": case "l":
-					System.out.println("The list number is: " + saveUser.count() +"  "+ saveUser.userDatabase.get(1).getFirstName());
 					break;
 				case "R": case "r":
 					Register register = new Register(); //used to register the user
 					register.registerUser(saveUser);
 					break;
 				case "C": case "c":
-					PasswordRecovery recover = new PasswordRecovery();
-					recover.Recov(saveUser);
+					//PasswordRecovery recover = new PasswordRecovery();
+					//recover.Recov(saveUser);
 					break;
 				default:
 					System.out.println("Wrong choice! Try again!");

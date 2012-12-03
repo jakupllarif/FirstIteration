@@ -1,3 +1,4 @@
+package team2project.sourceCodes;
 
 public class User {
 	

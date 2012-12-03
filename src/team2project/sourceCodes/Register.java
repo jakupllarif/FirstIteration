@@ -1,9 +1,12 @@
+package team2project.sourceCodes;
+
 import java.util.concurrent.atomic.AtomicReferenceArray;
+
 
 
 public class Register {
 
-	void registerUser(DataAccess saveUser){
+	void registerUser(DataAccess dataAccess){
 		
 		String firstName = null;
 		String address = null;
@@ -33,15 +36,15 @@ public class Register {
 		
 		System.out.println(newUser.toString());
 		
-		saveUser.userDatabase.add(newUser);
-		System.out.println("The number of users: " + saveUser.count());
+		try {
+			dataAccess.saveUser(newUser);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		System.out.println("The user is saved to the virtual database.");
-		
-		
 	}
-	
-
 }
 
 
