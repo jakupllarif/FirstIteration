@@ -1,16 +1,6 @@
-
-
 package sourceCodes;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-
-
 
 public class Register {
 
@@ -41,8 +31,6 @@ public class Register {
 		//create the user and save that to the list
 		User newUser = new User(userInfo.get(0), userInfo.get(1), userInfo.get(2), userInfo.get(3), userInfo.get(4), userInfo.get(5), userInfo.get(6), userInfo.get(7), userInfo.get(8),userInfo.get(9), userInfo.get(10), userInfo.get(11), userInfo.get(12));
 		System.out.println("The user is created.");
-		
-		System.out.println(newUser.toString());
 		
 		try {
 			dataAccess.saveUser(newUser);

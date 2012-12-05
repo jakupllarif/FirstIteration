@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-
 public class DataAccess extends ArrayList<User> {
 
 	private Connection connect = null;
@@ -19,6 +18,7 @@ public class DataAccess extends ArrayList<User> {
 	
 	public void saveUser(User user) throws Exception{
 		try{
+			//DBConnector connectDB = new DBConnector();
 			DBConnector connectDB = new DBConnector();
 			Connection connect = connectDB.connectToDB();
 	      
