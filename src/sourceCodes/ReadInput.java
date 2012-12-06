@@ -1,4 +1,6 @@
 package sourceCodes;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.regex.Matcher;
@@ -7,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class ReadInput {
 
-	public void readUserInfo(AtomicReferenceArray<String> userInfo) {
+	public void readToRegister(AtomicReferenceArray<String> userInfo) {
 		
 		Scanner input = new Scanner(System.in);
 		boolean nonalphanumeric;
@@ -129,7 +131,6 @@ public class ReadInput {
 		userInfo.set(12, secretAnswer3);
 		
 	}
-	
 	
 	//------------------------------Check if input is correct---------------------------------------------------------------------------------//
 	

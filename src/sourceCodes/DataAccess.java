@@ -1,16 +1,23 @@
 package sourceCodes;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
 
 
 public class DataAccess extends ArrayList<User> {
-
+	public static final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
 	private Connection connect = null;
 	private PreparedStatement preparedStatement = null;
 	private ResultSet resultSet = null;
+	private Statement stm = null;
+	DBConnector connectDB = new DBConnector();
 	
 	ArrayList<String> secretQuestions = new ArrayList<String>(Arrays.asList("Enter your mother's birth city:",
 																		"Enter your father's birth city:",
@@ -18,9 +25,7 @@ public class DataAccess extends ArrayList<User> {
 	
 	public void saveUser(User user) throws Exception{
 		try{
-			//DBConnector connectDB = new DBConnector();
-			DBConnector connectDB = new DBConnector();
-			Connection connect = connectDB.connectToDB();
+			connect = connectDB.connectToDB();
 	      
 	      preparedStatement = connect
 	          .prepareStatement("insert into  JAVADB.USERS values " + 
@@ -51,6 +56,53 @@ public class DataAccess extends ArrayList<User> {
 		    }
 	}
 	
+	public boolean loginUser(String username, String password) throws Exception{
+
+		try{
+			connect = connectDB.connectToDB();
+			stm = connect.createStatement();
+			String query = "select * from users where users.username='"+ username +"' and users.password='"+ password +"'";
+			resultSet = stm.executeQuery(query);
+			resultSet.next();
+			if(resultSet.next()){
+				return true;
+			}else
+				return false;
+		
+		}catch (Exception e) {
+		      throw e;
+		    } finally {
+		      close();
+		    }
+	}
+
+	/*public void loginUpdate(String username, String password) throws Exception {
+		try{
+			connect = connectDB.connectToDB();
+			
+			String query = "update table users set users.datetimelastlogin=? where users.username=? and users.password=?";
+			preparedStatement = connect.prepareStatement(query);
+			preparedStatement.setString(1, now());
+			preparedStatement.setString(2, username);
+			preparedStatement.setString(3, password);
+			preparedStatement.executeUpdate();
+
+		}catch (Exception e) {
+		      throw e;
+		    } finally {
+		      close();
+		    }
+	}
+	
+	public static String now() {
+		java.util.Date dt = new java.util.Date();
+
+		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		String currentTime = sdf.format(dt);
+		return currentTime;
+	}*/
+	
 	private void close() {
 	    try {
 	      if (resultSet != null) {
@@ -59,6 +111,9 @@ public class DataAccess extends ArrayList<User> {
 	      if (preparedStatement != null) {
 	        preparedStatement.close();
 	      }
+	      if (stm != null) {
+		    stm.close();
+		  }
 	      if (connect != null) {
 	        connect.close();
 	      }
@@ -66,4 +121,5 @@ public class DataAccess extends ArrayList<User> {
 
 	    }
 	}
+
 }

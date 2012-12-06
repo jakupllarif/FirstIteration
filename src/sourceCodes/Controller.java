@@ -9,7 +9,6 @@ public class Controller {
 	public void menu() {
 		
 		String repeat;
-		DataAccess saveUser = new DataAccess();//list of the users used as database
 		Scanner input = new Scanner(System.in);
 		
 		do{
@@ -21,10 +20,12 @@ public class Controller {
 			
 			switch (choice){
 				case "L": case "l":
+					Login login = new Login();
+					login.logUser();
 					break;
 				case "R": case "r":
 					Register register = new Register(); //used to register the user
-					register.registerUser(saveUser);
+					register.registerUser();
 					break;
 				case "C": case "c":
 					//PasswordRecovery recover = new PasswordRecovery();

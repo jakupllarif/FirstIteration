@@ -10,7 +10,7 @@ public class DataAccessTest{
 
 	@Test
 	public void testSaveUser() throws Exception {
-		int rowcount = 0;
+	
 		DBConnector connectDB = new DBConnector();
 		Connection connect = connectDB.connectToDB();
 		Statement stm = null;
@@ -28,11 +28,27 @@ public class DataAccessTest{
 				assertTrue(true);
 			else
 				assertFalse(true);
-			rowcount = rs.getInt(1);
 		} finally {
 			connect.close();
 		      rs.close();
 		      stm.close();
 		}
+	}
+	
+	@Test
+	public void testlogUser() throws Exception{
+		
+		boolean rs = false;
+		String username = "paoloLucini";
+		String password = "luciniP123";
+		
+		DataAccess log = new DataAccess();
+		rs=log.loginUser(username, password);
+		
+		if(rs)
+			assertTrue(true);
+		else
+			assertFalse(true);
+		
 	}
 }

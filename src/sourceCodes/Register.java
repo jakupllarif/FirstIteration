@@ -4,7 +4,9 @@ import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class Register {
 
-	void registerUser(DataAccess dataAccess){
+	void registerUser(){
+		
+		DataAccess dataAccess = new DataAccess();
 		
 		String firstName = null;
 		String address = null;
@@ -26,7 +28,7 @@ public class Register {
 		
 		//read the input data to register the user
 		ReadInput readUserData = new ReadInput();
-		readUserData.readUserInfo(userInfo);
+		readUserData.readToRegister(userInfo);
 		
 		//create the user and save that to the list
 		User newUser = new User(userInfo.get(0), userInfo.get(1), userInfo.get(2), userInfo.get(3), userInfo.get(4), userInfo.get(5), userInfo.get(6), userInfo.get(7), userInfo.get(8),userInfo.get(9), userInfo.get(10), userInfo.get(11), userInfo.get(12));
