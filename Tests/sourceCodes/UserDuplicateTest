@@ -20,22 +20,22 @@ public class testuser {
 	 }
 
 //-------TEST ADD-------------------------------
-		@Test
-		public void testAdd() {
-			User tester = new User();
+		//@Test
+		//public void testAdd() {
+		//	User tester = new User();
 			//read the initial size of the array list
-			assertEquals(0,tester.ArrayListUser.size());
+		//	assertEquals(0,tester.ArrayListUser.size());
 			//test if the following value is added
-			tester.add ("Priya", "Suresh", "Aswani", 
-					  "99 knollwood drive", "bethel", "CT", "06801", 
-					  "aaswani", "Wilds123", "priyaaswani2006@yahoo.com", 
-					  "delhi", "camry", "toyota");
-			assertEquals(1, tester.ArrayListUser.size());
+		//	tester.add ("Priya", "Suresh", "Aswani", 
+				//	  "99 knollwood drive", "bethel", "CT", "06801", 
+				//	  "aaswani", "Wilds123", "priyaaswani2006@yahoo.com", 
+				//	  "delhi", "camry", "toyota");
+		//	assertEquals(1, tester.ArrayListUser.size());
 			//test if the same value cannot be added - duplicate.
-			tester.add("Priya", "Suresh", "Aswani", 
-					  "99 knollwood drive", "bethel", "CT", "06801", 
-					  "aaswani", "Wilds123", "priyaaswani2006@yahoo.com", 
-					  "delhi", "camry", "toyota");
-			assertEquals(1, tester.ArrayListUser.size());
-		}
+		//	tester.add("Priya", "Suresh", "Aswani", 
+			//		  "99 knollwood drive", "bethel", "CT", "06801", 
+			//		  "aaswani", "Wilds123", "priyaaswani2006@yahoo.com", 
+			//		  "delhi", "camry", "toyota");
+		//	assertEquals(1, tester.ArrayListUser.size());
+		//}
 }
